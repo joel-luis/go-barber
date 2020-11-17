@@ -1,3 +1,4 @@
+import 'reflect-metadata';
 import express from 'express';
 import routes from './routes';
 import bodyParser from 'body-parser';
@@ -9,6 +10,7 @@ app.get('/', (request, response) => {
     return response.json({message: 'Hello Joel Luis'});
 })
 
+app.use(express.json());
 app.use(routes);
 
 app.listen(3333, () => 
